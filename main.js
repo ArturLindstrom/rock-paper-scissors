@@ -9,7 +9,9 @@ slideimages[2].src = "assets/scissors.jpg"
 let step=0
 let timeValue = null
 let random = computerRandom()
-
+let axelScore = 0
+let playerScore = 0
+let turns = axelScore + playerScore
 function slideit(){
    if (!document.images)
    return
@@ -41,26 +43,30 @@ document.querySelector("h2").addEventListener("click", (e)=>{
        playah = button.className
        random = computerRandom()
        spel()
-       
-   })
+       })
    }
    document.querySelector("h2").innerText = ""
    
 })
 
 function win() {
-   document.querySelector("h1").innerText = "You chose " + playah + ". " + "You are the winner!"
+   document.querySelector("h1").innerText = "You chose " + playah + ". " + "You won!"
    document.querySelector("h2").innerText = "Click to play again!"
    for(let button of buttons){
-    button.style.display = "none"
+      button.style.display = "none"
    }
+  
 }
 
 function lose() {
    document.querySelector("h1").innerText = "You chose " + playah + ". " + "You lost!"
    document.querySelector("h2").innerText = "Click to play again!"
    for(let button of buttons){
-    button.style.display = "none"
+      button.style.display = "none"
+   }
+   axelScore++
+   if(turns==5){
+      document.querySelector("")
    }
 
 }
@@ -78,33 +84,33 @@ function spel (){
    document.querySelector('#slide').src = "assets/" + random + ".jpg"
    if(random=="rock" && playah == "paper"){
       clearInterval(timeValue)
-    //   document.querySelector('#slide').src = "assets/rock.jpg"
       win()
+      playerScore++
    }
    else if(random == "paper" && playah == "scissors"){
       clearInterval(timeValue)
-    //   document.querySelector('#slide').src = "assets/paper.jpg"
       win()
+      playerScore++
    }
    else if(random == "scissors" && playah == "rock"){
       clearInterval(timeValue)
-    //   document.querySelector('#slide').src = "assets/scissors.jpg"
       win()
+      playerScore++
    }
    else if(random == "scissors" && playah == "paper"){
       clearInterval(timeValue)
-    //   document.querySelector('#slide').src = "assets/scissors.jpg"
       lose()
+      axelScore++
    }
    else if(random == "paper" && playah == "rock"){
       clearInterval(timeValue)
-    //   document.querySelector('#slide').src = "assets/paper.jpg"
       lose()
+      axelScore++
    }
    else if(random == "rock" && playah == "scissors"){
       clearInterval(timeValue)
-    //   document.querySelector('#slide').src = "assets/rock.jpg"
       lose()
+      axelScore++
    }
    else{
       document.querySelector('#slide').src = "assets/" + random + ".jpg"
@@ -112,3 +118,4 @@ function spel (){
       tie()
    }
 }
+
