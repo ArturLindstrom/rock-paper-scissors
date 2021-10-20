@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    font-family: 'Quicksand';
+    transition: all 500ms;
+    text-align: center;
+}
+
+
+
+.container {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: linear-gradient(peru, lemonchiffon,peru)
+}
+#slide {
+   margin: 1rem;
+   border: solid black 4px;
+   border-radius: 10px;
+   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    
+}
+
+h2:hover {
+   color: orangered;
+}
+
+.playerchoice {
+   display: flex;
+   justify-content: center;
+}
+
+.paper {
+   transform: rotate(90deg);
+
+}
+
+a {
+    
+    margin: 1rem;
+    padding: 1rem;
+    background-color: peru;
+    border-radius: 10px;
+    border: solid black 4px;
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+a:nth-of-type(1){
+background-image: url(assets/rock.png);
+background-repeat: no-repeat;
+background-position: center;
+}
+a:nth-of-type(2){
+    background-image: url(assets/scissors_39412.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+a:nth-of-type(3){
+    background-image:url(assets/hand_37982.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+}
+a:hover {
+background-color:lemonchiffon;
+}
+
+
